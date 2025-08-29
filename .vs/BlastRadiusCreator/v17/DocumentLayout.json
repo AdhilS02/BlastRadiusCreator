@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\AdhilS\\source\\repos\\BlastRadiusCreator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|c:\\users\\adhils\\source\\repos\\blastradiuscreator\\wwwroot\\js\\spriteassistant.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|",
+      "RelativeMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|solutionrelative:wwwroot\\js\\spriteassistant.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|c:\\users\\adhils\\source\\repos\\blastradiuscreator\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|solutionrelative:pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|c:\\users\\adhils\\source\\repos\\blastradiuscreator\\wwwroot\\sprite\\spritewords.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|solutionrelative:wwwroot\\sprite\\spritewords.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|c:\\users\\adhils\\source\\repos\\blastradiuscreator\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|c:\\users\\adhils\\source\\repos\\blastradiuscreator\\wwwroot\\js\\tutorial.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|",
       "RelativeMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|solutionrelative:wwwroot\\js\\tutorial.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|c:\\users\\adhils\\source\\repos\\blastradiuscreator\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|solutionrelative:pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|c:\\users\\adhils\\source\\repos\\blastradiuscreator\\wwwroot\\js\\rightpane.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +54,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "spriteAssistant.js",
+              "DocumentMoniker": "C:\\Users\\AdhilS\\source\\repos\\BlastRadiusCreator\\wwwroot\\js\\spriteAssistant.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\spriteAssistant.js",
+              "ToolTip": "C:\\Users\\AdhilS\\source\\repos\\BlastRadiusCreator\\wwwroot\\js\\spriteAssistant.js",
+              "RelativeToolTip": "wwwroot\\js\\spriteAssistant.js",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAewE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-08-29T08:20:27.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SpriteWords.json",
+              "DocumentMoniker": "C:\\Users\\AdhilS\\source\\repos\\BlastRadiusCreator\\wwwroot\\Sprite\\SpriteWords.json",
+              "RelativeDocumentMoniker": "wwwroot\\Sprite\\SpriteWords.json",
+              "ToolTip": "C:\\Users\\AdhilS\\source\\repos\\BlastRadiusCreator\\wwwroot\\Sprite\\SpriteWords.json",
+              "RelativeToolTip": "wwwroot\\Sprite\\SpriteWords.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-29T08:17:00.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "rightPane.js",
               "DocumentMoniker": "C:\\Users\\AdhilS\\source\\repos\\BlastRadiusCreator\\wwwroot\\js\\rightPane.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\rightPane.js",
@@ -59,20 +93,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\Users\\AdhilS\\Source\\Repos\\BlastRadiusCreator\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
               "ToolTip": "C:\\Users\\AdhilS\\Source\\Repos\\BlastRadiusCreator\\.gitignore",
               "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACYAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-08-29T07:46:38.871Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "tutorial.js",
               "DocumentMoniker": "C:\\Users\\AdhilS\\source\\repos\\BlastRadiusCreator\\wwwroot\\js\\tutorial.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\tutorial.js",
@@ -85,13 +119,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\AdhilS\\source\\repos\\BlastRadiusCreator\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\AdhilS\\source\\repos\\BlastRadiusCreator\\Pages\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABoAAAAAAAAAAAAnwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAsAAABxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-08-29T06:55:05.164Z",
               "EditorCaption": ""
