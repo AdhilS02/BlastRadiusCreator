@@ -112,6 +112,16 @@
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('width', String(widthNeeded)); svg.setAttribute('height', String(heightNeeded)); svg.setAttribute('viewBox', `0 0 ${widthNeeded} ${heightNeeded}`); svg.style.display = 'block';
 
+    // Add defs for a soft drop shadow
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    const filter = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
+    filter.setAttribute('id', 'nodeShadow');
+    filter.setAttribute('x', '-50%'); filter.setAttribute('y', '-50%'); filter.setAttribute('width', '200%'); filter.setAttribute('height', '200%');
+    const feDrop = document.createElementNS('http://www.w3.org/2000/svg', 'feDropShadow');
+    feDrop.setAttribute('dx', '0'); feDrop.setAttribute('dy', '3'); feDrop.setAttribute('stdDeviation', '3');
+    feDrop.setAttribute('flood-color', '#000000'); feDrop.setAttribute('flood-opacity', '0.25');
+    filter.appendChild(feDrop); defs.appendChild(filter); svg.appendChild(defs);
+
     // Edges
     edges.forEach(e => { const line = document.createElementNS('http://www.w3.org/2000/svg', 'line'); line.setAttribute('x1', String(e.from.x)); line.setAttribute('y1', String(e.from.y)); line.setAttribute('x2', String(e.to.x)); line.setAttribute('y2', String(e.to.y)); line.setAttribute('stroke', '#94a3b8'); line.setAttribute('stroke-width', '2'); svg.appendChild(line); });
 
@@ -121,7 +131,10 @@
       g.addEventListener('mousedown', (ev) => startDrag(n.id, ev));
 
       const ig = document.createElementNS('http://www.w3.org/2000/svg', 'g'); ig.id = `nodeInner-${n.id}`; ig.style.transformBox = 'fill-box'; ig.style.transformOrigin = 'center';
-      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); circle.setAttribute('cx', String(n.x)); circle.setAttribute('cy', String(n.y)); circle.setAttribute('r', String(n.r)); circle.setAttribute('fill', n.fill); circle.setAttribute('stroke', n.stroke); circle.setAttribute('stroke-width', '2'); ig.appendChild(circle);
+      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); circle.setAttribute('cx', String(n.x)); circle.setAttribute('cy', String(n.y)); circle.setAttribute('r', String(n.r)); circle.setAttribute('fill', n.fill); circle.setAttribute('stroke', n.stroke); circle.setAttribute('stroke-width', '2');
+      // Apply soft shadow
+      circle.setAttribute('filter', 'url(#nodeShadow)');
+      ig.appendChild(circle);
       const label = document.createElementNS('http://www.w3.org/2000/svg', 'text'); label.setAttribute('text-anchor', 'middle'); label.setAttribute('dominant-baseline', 'middle'); label.setAttribute('fill', '#fff'); label.setAttribute('stroke', '#000'); label.setAttribute('stroke-width', '2'); label.setAttribute('paint-order', 'stroke'); label.setAttribute('font-size', String(FONT_SIZE)); label.setAttribute('font-family', FONT_FAMILY); label.setAttribute('font-weight', String(FONT_WEIGHT));
       const startY = n.y - ((n.lines.length - 1) * LINE_HEIGHT) / 2; n.lines.forEach((ln, i) => { const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan'); tspan.setAttribute('x', String(n.x)); tspan.setAttribute('y', String(startY + i * LINE_HEIGHT)); tspan.appendChild(document.createTextNode(ln)); label.appendChild(tspan); }); ig.appendChild(label);
       g.appendChild(ig); svg.appendChild(g);

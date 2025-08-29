@@ -1,4 +1,4 @@
-(function(){
+﻿(function(){
   'use strict';
   // Settings
   const BASE = (window.APP_BASE || '/');
@@ -13,7 +13,7 @@
     if (container && document.getElementById('spriteAssistant')) return; // already initialized
     container = document.createElement('div');
     container.id = 'spriteAssistant';
-    Object.assign(container.style, { position: 'fixed', left: '12px', bottom: '12px', zIndex: '2000', pointerEvents: 'none' });
+    Object.assign(container.style, { position: 'fixed', left: '12px', bottom: '28px', zIndex: '2000', pointerEvents: 'none' });
 
     img = document.createElement('img');
     img.alt = 'Assistant';
@@ -62,7 +62,7 @@
         img.removeAttribute('src');
         img.alt = 'Sprite not found';
         // Placeholder emoji scaled to sprite size
-        const ph = document.createElement('div'); ph.textContent = '??'; ph.style.fontSize = '80px'; ph.style.lineHeight = '128px'; ph.style.width='128px'; ph.style.height='128px'; ph.style.textAlign='center'; ph.style.userSelect='none';
+        const ph = document.createElement('div'); ph.textContent = '🙂'; ph.style.fontSize = '80px'; ph.style.lineHeight = '128px'; ph.style.width='128px'; ph.style.height='128px'; ph.style.textAlign='center'; ph.style.userSelect='none';
         container.replaceChild(ph, img);
         lastGifUrl = null;
         return;

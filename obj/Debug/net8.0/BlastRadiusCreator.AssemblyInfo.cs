@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlastRadiusCreator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95086210eb4c8f0fdf97a470114335e481f990aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e60a81cc96efbd81c68756ba92358c66e09d46f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlastRadiusCreator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlastRadiusCreator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
