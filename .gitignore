@@ -34,9 +34,9 @@
 
 # Common directories and files we still want to ignore explicitly
 # (covered by the global * ignore, listed here for clarity)
-# bin/
-# obj/
-# .vs/
+ bin/
+ obj/
+ .vs/
 # node_modules/
 # *.user
 # *.suo

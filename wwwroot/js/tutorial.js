@@ -93,7 +93,7 @@
       window.renderDiagramSafe && window.renderDiagramSafe();
 
       await showToast("Let's start by typing a parent:");
-      await typeText(input, 'bubble 1', 80);
+      await typeText(input, 'Did you know?', 80);
 
       await showToast('Press Enter to go to a new line, then press Tab to create a child.');
       // Simulate Enter + Tab + type child
@@ -106,7 +106,7 @@
         const cur2 = input.selectionStart ?? input.value.length;
         input.value = input.value.slice(0, cur2) + '\t' + input.value.slice(cur2);
         setCaret(input, cur2 + 1);
-        await typeText(input, 'child 1', 70);
+        await typeText(input, 'Sai Loves Dogs', 70);
       }
 
       await showToast('Enter then Tab again creates another child.');
@@ -119,7 +119,7 @@
         const cur2 = input.selectionStart ?? input.value.length;
         input.value = input.value.slice(0, cur2) + '\t' + input.value.slice(cur2);
         setCaret(input, cur2 + 1);
-        await typeText(input, 'child 2', 70);
+        await typeText(input, 'But Dogs Do not Love Sai', 70);
       }
 
       await showToast('Press Enter twice to start a new parent.');
@@ -132,7 +132,7 @@
       }
 
       // New step: demonstrate moving nodes
-      await showToast('You can also drag nodes to reposition them. Watch this...');
+      await showToast('You can also drag nodes without their consent, watch this...');
       // Allow render to catch up
       await sleep(300);
       // Try to move first root (0:0) and its first child (0:1) if available
