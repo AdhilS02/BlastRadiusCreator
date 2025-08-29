@@ -41,3 +41,5 @@
 # *.user
 # *.suo
 # *.cache
+/bin/Release/net8.0
+/obj/Release/net8.0
