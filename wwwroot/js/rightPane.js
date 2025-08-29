@@ -14,7 +14,7 @@
   // ========================
   const TAB_WIDTH = 4; const BASE_RADIUS = 40; const RADIUS_STEP = 8; const MIN_RADIUS = 16;
   const X_STEP = 150; const Y_STEP = 90; const LEFT_MARGIN = 60; const TOP_MARGIN = 50; const RIGHT_MARGIN = 60; const GROUP_GAP = 80;
-  const FONT_SIZE = 14; const FONT_FAMILY = "'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"; const FONT_WEIGHT = 300; const TEXT_PADDING = 10; const LINE_HEIGHT = Math.round(FONT_SIZE * 1.2);
+  const FONT_SIZE = 14; const FONT_FAMILY = "'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"; const FONT_WEIGHT = 600; const TEXT_PADDING = 10; const LINE_HEIGHT = Math.round(FONT_SIZE * 1.2);
   const BASE_PARENT_COLORS = ['#ef4444', '#3b82f6', '#16a34a', '#eab308', '#f97316', '#7c3aed']; const rootBaseColorMap = new Map();
 
   function pickRandomBaseColor() { const idx = Math.floor(Math.random() * BASE_PARENT_COLORS.length); return BASE_PARENT_COLORS[idx]; }
@@ -71,6 +71,42 @@
     simNodes.forEach(d => { d.x = Math.max(d.r + 4, Math.min(width - d.r - 4, d.x)); d.y = Math.max(d.r + 4, Math.min(height - d.r - 4, d.y)); const base = nodes.find(n => n.id === d.id); const desiredDx = d.x - base.baseX; const desiredDy = d.y - base.baseY; nodeOffsets.set(d.id, { dx: desiredDx, dy: desiredDy }); });
   }
 
+  function inlinePoppinsCss(){
+    // Inline @font-face for Poppins 300/600/700 using Google Fonts css URLs
+    const css = `@font-face{font-family:'Poppins';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLDz8Z1xlEA.woff2) format('woff2')}@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1xlEA.woff2) format('woff2')}@font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLEjYZ1xlEA.woff2) format('woff2')}`;
+    return `<style type="text/css">${css}</style>`;
+  }
+
+  function cloneSvgWithFonts(svg){
+    const serializer = new XMLSerializer();
+    let src = serializer.serializeToString(svg);
+    // Inject font-face at the top just after opening <svg>
+    src = src.replace(/<svg[^>]*>/, (m) => `${m}${inlinePoppinsCss()}`);
+    return src;
+  }
+
+  function exportSvg(svgEl) { const src = cloneSvgWithFonts(svgEl); const blob = new Blob([src], { type: 'image/svg+xml;charset=utf-8' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'diagram.svg'; a.click(); URL.revokeObjectURL(url); }
+
+  async function exportPng(svgEl) {
+    if (document.fonts && document.fonts.ready) { try { await document.fonts.ready; } catch {} }
+    const src = cloneSvgWithFonts(svgEl);
+    const svgBlob = new Blob([src], { type: 'image/svg+xml;charset=utf-8' });
+    const svgUrl = URL.createObjectURL(svgBlob);
+
+    const img = new Image(); img.crossOrigin = 'anonymous';
+    const w = svgEl.viewBox.baseVal && svgEl.viewBox.baseVal.width ? svgEl.viewBox.baseVal.width : svgEl.width.baseVal.value;
+    const h = svgEl.viewBox.baseVal && svgEl.viewBox.baseVal.height ? svgEl.viewBox.baseVal.height : svgEl.height.baseVal.value;
+    const canvas = document.createElement('canvas'); canvas.width = w * 2; canvas.height = h * 2; const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+    img.onload = function () {
+      ctx.setTransform(2, 0, 0, 2, 0, 0);
+      ctx.drawImage(img, 0, 0);
+      canvas.toBlob((blob) => { const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'diagram.png'; a.click(); URL.revokeObjectURL(url); URL.revokeObjectURL(svgUrl); }, 'image/png');
+    };
+    img.onerror = function (e) { console.error('PNG export failed', e); URL.revokeObjectURL(svgUrl); };
+    img.src = svgUrl;
+  }
+
   function buildAndRenderSvg(allNodes, edges, widthNeeded, heightNeeded) {
     clear(diagramArea);
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -97,9 +133,6 @@
     if (btnExportSvg) btnExportSvg.onclick = () => exportSvg(svg);
     if (btnExportPng) btnExportPng.onclick = () => exportPng(svg);
   }
-
-  function exportSvg(svgEl) { const serializer = new XMLSerializer(); const src = serializer.serializeToString(svgEl); const blob = new Blob([src], { type: 'image/svg+xml;charset=utf-8' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'diagram.svg'; a.click(); URL.revokeObjectURL(url); }
-  function exportPng(svgEl) { const saveLib = window.saveSvgAsPng; if (saveLib && typeof saveLib.saveSvgAsPng === 'function') { try { saveLib.saveSvgAsPng(svgEl, 'diagram.png', { backgroundColor: 'white', scale: 2 }); return; } catch { } } const serializer = new XMLSerializer(); const src = serializer.serializeToString(svgEl); const img = new Image(); img.crossOrigin = 'anonymous'; const svgUrl = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(src); img.onload = function () { const w = svgEl.viewBox.baseVal && svgEl.viewBox.baseVal.width ? svgEl.viewBox.baseVal.width : svgEl.width.baseVal.value; const h = svgEl.viewBox.baseVal && svgEl.viewBox.baseVal.height ? svgEl.viewBox.baseVal.height : svgEl.height.baseVal.value; const canvas = document.createElement('canvas'); canvas.width = w * 2; canvas.height = h * 2; const ctx = canvas.getContext('2d'); ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.setTransform(2, 0, 0, 2, 0, 0); ctx.drawImage(img, 0, 0); canvas.toBlob((blob) => { const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'diagram.png'; a.click(); URL.revokeObjectURL(url); }, 'image/png'); }; img.onerror = function (e) { console.error('PNG export failed', e); }; img.src = svgUrl; }
 
   function relaxAllWithForceWrapper(nodes, width, height) { try { relaxAllWithForce(nodes, width, height); } catch { } }
 
