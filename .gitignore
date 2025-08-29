@@ -43,3 +43,4 @@
 # *.cache
 Release/net8.0
 /obj/Release/net8.0
+bin/Release/*
