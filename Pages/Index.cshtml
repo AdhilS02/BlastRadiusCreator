@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Blast Radius Creator";
+}
+
+<div class="split-container" id="splitContainer">
+    <section id="leftPane" class="split-pane left" aria-label="Text input panel">
+        <textarea id="inputText" class="input-text" placeholder="Type your text here..."></textarea>
+    </section>
+
+    <div id="splitResizer" class="split-resizer" role="separator" aria-orientation="vertical" aria-label="Resize panels" tabindex="-1"></div>
+
+    <section id="rightPane" class="split-pane right" aria-label="Blast radius preview">
+        <div class="d-flex align-items-center gap-2 p-2">
+            <div class="btn-group btn-group-sm" role="group" aria-label="Export controls">
+                <button id="btnExportSvg" type="button" class="btn btn-outline-primary" title="Export SVG">Export SVG</button>
+                <button id="btnExportPng" type="button" class="btn btn-outline-primary" title="Export PNG">Export PNG</button>
+            </div>
+        </div>
+        <div id="diagramArea" class="diagram-area" style="position: relative;">Blast radius diagram will appear here.</div>
+    </section>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/save-svg-as-png@1.4.17/lib/saveSvgAsPng.min.js" crossorigin="anonymous"></script>
+    <script src="~/js/rightPane.js" asp-append-version="true"></script>
+    <script src="~/js/leftPane.js" asp-append-version="true"></script>
+}

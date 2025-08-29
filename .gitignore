@@ -1,0 +1,43 @@
+# Ignore everything by default
+*
+
+# But keep directories so negated file patterns can match within them
+!*/
+
+# Always keep this file
+!.gitignore
+
+# Keep C# source (classes, code-behind, etc.)
+!*.cs
+
+# Keep Razor/HTML web pages
+!*.cshtml
+!*.html
+
+# Keep client assets
+!*.js
+!*.css
+
+# Keep configuration
+!*.json
+!*.yml
+!*.yaml
+!*.xml
+!*.config
+!.editorconfig
+
+# Keep .NET project/solution files (treat as config)
+!*.csproj
+!*.sln
+!*.props
+!*.targets
+
+# Common directories and files we still want to ignore explicitly
+# (covered by the global * ignore, listed here for clarity)
+# bin/
+# obj/
+# .vs/
+# node_modules/
+# *.user
+# *.suo
+# *.cache

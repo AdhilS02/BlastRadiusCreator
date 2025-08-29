@@ -1,0 +1,96 @@
+html, body {
+  height: 100%;
+}
+
+/* Existing styles */
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Make footer background solid */
+.footer {
+  background-color: var(--bs-body-bg, #ffffff);
+}
+
+/* Split layout styles */
+.split-container {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 6px minmax(200px, 1fr);
+  gap: 0;
+  align-items: stretch;
+  width: 100%;
+  height: calc(100vh - 160px); /* more vertical space for panes */
+  max-height: calc(100vh - 160px);
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.split-container.full-width {
+  width: 100vw; /* if needed for full viewport width */
+}
+
+.split-pane {
+  min-width: 0; /* allow content to shrink */
+  overflow: auto;
+}
+
+.split-pane.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-text {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 200px;
+  padding: .75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  border: none;
+  outline: none;
+  resize: none; /* resizing handled by splitter */
+}
+
+.split-resizer {
+  cursor: col-resize;
+  background: repeating-linear-gradient(
+    90deg,
+    #ddd,
+    #ddd 1px,
+    #f3f4f6 1px,
+    #f3f4f6 3px
+  );
+  width: 6px;
+}
+
+.is-resizing, .is-resizing * {
+  cursor: col-resize !important;
+  user-select: none !important;
+}
+
+.diagram-area {
+  padding: 1rem;
+  color: #111827;
+}
