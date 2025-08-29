@@ -17,8 +17,8 @@
 
     img = document.createElement('img');
     img.alt = 'Assistant';
-    // Bigger sprite
-    Object.assign(img.style, { display: 'block', width: '128px', height: '128px', objectFit: 'contain', pointerEvents: 'auto' });
+    // Bigger sprite + soft drop shadow
+    Object.assign(img.style, { display: 'block', width: '128px', height: '128px', objectFit: 'contain', pointerEvents: 'auto', filter: 'drop-shadow(0 8px 14px rgba(0,0,0,0.50))' });
 
     bubble = document.createElement('div');
     bubble.id = 'spriteSpeech';
@@ -61,8 +61,11 @@
         console.warn('No sprite GIFs could be loaded from', GIFS_DIR, 'names tried:', list);
         img.removeAttribute('src');
         img.alt = 'Sprite not found';
-        // Placeholder emoji scaled to sprite size
-        const ph = document.createElement('div'); ph.textContent = '🙂'; ph.style.fontSize = '80px'; ph.style.lineHeight = '128px'; ph.style.width='128px'; ph.style.height='128px'; ph.style.textAlign='center'; ph.style.userSelect='none';
+        // Placeholder emoji scaled to sprite size + soft shadow
+        const ph = document.createElement('div');
+        ph.textContent = '🙂';
+        ph.style.fontSize = '80px'; ph.style.lineHeight = '128px'; ph.style.width='128px'; ph.style.height='128px'; ph.style.textAlign='center'; ph.style.userSelect='none';
+        ph.style.boxShadow = '0 8px 14px rgba(0,0,0,0.28)';
         container.replaceChild(ph, img);
         lastGifUrl = null;
         return;
