@@ -32,15 +32,12 @@
 !*.props
 !*.targets
 
-# Common directories and files we still want to ignore explicitly
-# (covered by the global * ignore, listed here for clarity)
- bin/*
- obj/*
- .vs/*
-# node_modules/
-# *.user
-# *.suo
-# *.cache
+# Always ignore build output and IDE folders (even if whitelisted by extension)
+.vs/
+**/bin/**
+**/obj/**
+
+# Additional explicit ignores (optional clarity)
 Release/net8.0
 /obj/Release/net8.0
 bin/Release/*

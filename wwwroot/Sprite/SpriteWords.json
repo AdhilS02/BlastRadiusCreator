@@ -54,6 +54,51 @@
 			"Sai is very Sus",
 			"This Tutorial is a LIE! Dont believe it!",
 			"The Dev forgot that you can move the bubbles while the Tutorial is on lol"
+		],
+		"Redis": [
+			"Without Redis, SQL will die...Try it!",
+			"Appsettings in redis is the way to go!",
+			"You're getting cache! She's getting cache! Everyone is getting cache!",
+			"Did you know we have a Redis Dashboard? If you didn't you probably don't work enough"
+		],
+		"Syx Betting API": [
+			"This is the backbone of Bet Strike. Don't F&$# it up!",
+			"Another monolith of an API",
+			"May the Deploy Gods be with you"
+		],
+		"SyxBettingAPI": [
+			"This is the backbone of Bet Strike. Don't F&$# it up!",
+			"Another monolith of an API",
+			"May the Deploy Gods be with you"
+		],
+		"Couchbase": [
+			"Very expensive technology that Couchbase",
+			"Couchbase is goiing to go anyway, why bother making your change?"
+		],
+		"Jacktime": [
+			"Did you check with Noel or Selu before you decided to touch Jacktime?",
+			"I bet you don't understand the Requirements of Jactime",
+			"I know the Devs who made Jactime, I can increase your balance!"
+		],
+		"Kiron": [
+			"Eish...",
+			"All 15 clients will be so happy you changed Kiron!",
+			"Make sure you get Matthew to test! He loves 4AM deploys!"
+		],
+		"Front End": [
+			"Front end is so pretty...but F*&$^#$ !!!",
+			"I miss old Mob and Old Web",
+			"Why are you touching Front End? You're a BackEnd Dev!"
+		],
+		"FrontEnd": [
+			"Front end is so pretty...but F*&$^#$ !!!",
+			"I miss old Mob and Old Web",
+			"Why are you touching Front End? You're a BackEnd Dev!"
+		],
+		"BetAPI": [
+			"This API casues a lot of Fraud Investigations",
+			"Help the Platforms Team will ya?",
+			"Put Jaco as QA in the RAB ticket"
 		]
 	}
 }
