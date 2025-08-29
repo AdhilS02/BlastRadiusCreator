@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\AdhilS\\source\\repos\\BlastRadiusCreator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|c:\\users\\adhils\\source\\repos\\blastradiuscreator\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|c:\\users\\adhils\\source\\repos\\blastradiuscreator\\wwwroot\\js\\tutorial.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|",
       "RelativeMoniker": "D:0:0:{22637850-4AAA-4D70-9C66-BA896545ADF3}|BlastRadiusCreator.csproj|solutionrelative:wwwroot\\js\\tutorial.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|"
     },
@@ -39,6 +43,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\AdhilS\\Source\\Repos\\BlastRadiusCreator\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\AdhilS\\Source\\Repos\\BlastRadiusCreator\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-29T07:46:38.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "tutorial.js",
               "DocumentMoniker": "C:\\Users\\AdhilS\\source\\repos\\BlastRadiusCreator\\wwwroot\\js\\tutorial.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\tutorial.js",
@@ -51,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\AdhilS\\source\\repos\\BlastRadiusCreator\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
